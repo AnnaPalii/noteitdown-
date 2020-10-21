@@ -9,13 +9,14 @@ router.get("/notes", (req,res) => {
 });
 
 router.post("/notes", (req,res) => {
+    console.log(req);
     store
     .addNotes(req.body)
     .then((notes) => res.json(notes))
     .catch((err) => res.status(500).json(err));
 });
 
-router.post("/notes/:id", (req,res) => {
+router.delete("/notes/:id", (req,res) => {
     store
     .removeNotes(req.params.id)
     .then(() => res.json({ok: true}))

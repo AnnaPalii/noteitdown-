@@ -31,14 +31,14 @@ class Store {
     });
     }
 
-    addNote(note) {
+    addNotes(note) {
         const {title,text} = note;
 
         if(!title || !text) {
             throw new Error ("Add 'title' and 'text' to save note");
         }
 
-        const newNote = {title, text, id: idGenerator()};
+        const newNote = {title, text, id: idGenerator.v4()};
 
         return this.getNotes()
         .then((notes) => [...notes, newNote])
@@ -46,7 +46,7 @@ class Store {
         .then(() => newNote);
     }
 
-    removeNote (id) {
+    removeNotes (id) {
         return this.getNotes()
         .then((notes) => notes.filter((note) => note.id !==id))
         .then((filteredNotes) => this.write(filteredNotes));
