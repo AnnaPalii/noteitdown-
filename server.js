@@ -11,9 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Provide routes
-
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+app.use(require("./routes/apiRoutes.js"));
+app.use(require("./routes/htmlRoutes.js"));
 
 // Start server
 
