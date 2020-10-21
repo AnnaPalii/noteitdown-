@@ -46,7 +46,9 @@ Application should allow users to delete previously saved notes.
 
 * Heroku: 
 
-* GitHub repository:
+* GitHub repository: https://github.com/AnnaPalii/noteitdown-
+
+* GitHub Pages: https://annapalii.github.io/noteitdown-/
 
 - - -
 © 2020 Anna Palii
